@@ -1,19 +1,19 @@
 // Juan David Castillo Ramirez
-// 000452553  :)
+// 000452553 :)
 // juan.castillor@upb.edu.co
 (INICIO) 
                 @KBD
                 D=M
-                @linea 
+                @vector 
                 M=1 
                 @84
                 D=D-A
-                @LINEAV
+                @VERTICAL
                 D;JEQ
                
                 @KBD
                 D=M
-                @linea
+                @vector
                 M=0   
                 @67
                 D=D-A 
@@ -22,10 +22,10 @@
                
                 @INICIO
                 0;JMP
-(LINEAV)
+(VERTICAL)
                 @16400 
                 D=A
-                @coordenada 
+                @coordenada
                 M=D 
                
                 @256
@@ -39,6 +39,21 @@
                 M=D
                 @RECTAV
                 0;JMP
+(BORRAR)
+                @16384 
+                D=A
+                @coordenada 
+                M=D 
+                @8192 
+                D=A
+                @contador
+                M=D
+                @1
+                D=A 
+                @salto
+                M=D
+                @RECTAB
+                0;JMP
 (RECTAV)
                 @coordenada 
                 D=M
@@ -47,11 +62,12 @@
 (PINTARV)
                 @contador
                 D=M 
-                @LINEAH
+ 
+                @HORIZONTAL
                 D;JEQ 
  
-                @linea
-                D=M 
+                @256
+                D=A
                
                 @saltoscreen
                 A=M 
@@ -68,7 +84,7 @@
                
                 @PINTARV
                 0;JMP
-(LINEAH)
+(HORIZONTAL)
                 @20480
                 D=A
                 @coordenada
@@ -81,9 +97,9 @@
 
                 @salto
                 M=1
-                @RECTAH
+                @RECTH
                 0;JMP
-(RECTAH)
+(RECTH)
                 @coordenada 
                 D=M
                 @saltoscreen
@@ -91,10 +107,11 @@
 (PINTARH)
                 @contador 
                 D=M 
+ 
                 @FIN
                 D;JEQ 
 
-                @linea
+                @vector
                 D=-1 
                
                 @saltoscreen
@@ -112,33 +129,19 @@
                
                 @PINTARH
                 0;JMP
-(BORRAR)
-                @16384 
-                D=A
-                @coordenada 
-                M=D 
-                @8192 
-                D=A
-                @contador 
-                M=D
-                @1
-                D=A 
-                @salto
-                M=D
-                @BORRARECTA2
-                0;JMP
-(BORRARECTA2)
-                @coordenada 
+(RECTAB)
+                @coordenada
                 D=M
                 @saltoscreen
                 M=D 
 (BORRADOR)
                 @contador 
                 D=M 
+ 
                 @FIN
                 D;JEQ 
 
-                @linea
+                @vector
                 D=M 
                
                 @saltoscreen
