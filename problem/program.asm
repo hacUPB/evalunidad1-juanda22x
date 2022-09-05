@@ -91,7 +91,7 @@
 (PINTARH)
                 @contador 
                 D=M 
-                @END
+                @FIN
                 D;JEQ 
 
                 @linea
@@ -125,9 +125,9 @@
                 D=A 
                 @salto
                 M=D
-                @BORRAR2
+                @BORRARECTA2
                 0;JMP
-(BORRAR2)
+(BORRARECTA2)
                 @coordenada 
                 D=M
                 @saltoscreen
@@ -135,7 +135,7 @@
 (BORRADOR)
                 @contador 
                 D=M 
-                @END
+                @FIN
                 D;JEQ 
 
                 @linea
@@ -156,7 +156,7 @@
                
                 @BORRADOR
                 0;JMP
-(END)
+(FIN)
                 @INICIO
                 0;JMP
 
